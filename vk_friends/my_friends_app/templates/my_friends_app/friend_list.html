@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Список друзей
+{% endblock %}
+
+{% block content %}
+  <div class="content-list">
+    <h1 class="header">Здравствуйте, {{ last_name }} {{ first_name }}!</h1>
+    <h2 class="list-title">Ваш список друзей:</h2>
+    <ul class="friend-list">
+    {% for friend in friends %}
+      <li class="friend-item">
+        <img class="friend-photo" src="{{ friend.photo_100 }}" alt="{{ friend.last_name }} {{ friend.first_name }}">
+        <a class="friend-name" href="https://vk.com/id{{ friend.id }}">{{ friend.last_name }} {{ friend.first_name }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    <a class="logout-link" href="{{ request.get_full_path }}logout/">Выйти из VK</a>
+  </div>
+{% endblock %}

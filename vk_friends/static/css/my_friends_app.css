@@ -1,0 +1,87 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Arial";
+	font-size: 18px;
+	background-color: #f9f9f9;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.log-in {
+    line-height: 50px;
+    text-align: center;
+    width: 250px;
+    display: block;
+    font-size: 18px;
+    border: solid 1px #597da3;
+    border-radius: 5px;
+    color: white;
+    background-color: #597da3;
+}
+
+.main {
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content-list {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.header {
+    font-size: 30px;
+    text-align: center;
+}
+
+.list-title {
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.friend-list {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.friend-item:not(:first-child) {
+    margin-top: 20px;
+}
+
+.friend-photo {
+    width: 150px;
+    height: 150px;
+}
+
+.friend-name {
+    display: block;
+    margin-top: 15px;
+    color: black;
+}
+
+.logout-link {
+    line-height: 50px;
+    text-align: center;
+    width: 250px;
+    display: inline-block;
+    font-size: 18px;
+    border: solid 1px #597da3;
+    border-radius: 5px;
+    color: white;
+    background-color: #597da3;
+    margin-top: 20px;
+}
