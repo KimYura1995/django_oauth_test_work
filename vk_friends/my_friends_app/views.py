@@ -1,4 +1,5 @@
 from allauth.socialaccount.models import SocialToken
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 
@@ -6,7 +7,7 @@ from my_friends_app.vk_api_functions import _get_context_list_friends
 
 
 def login_view(request):
-    if User.objects.filter(username=request.user, socialaccount__provider='vk').exists():
+    if request.user.is_authenticated:
         return redirect('friend_view', user_id=request.user)
     return render(request, 'my_friends_app/login.html')
 
@@ -21,7 +22,7 @@ def list_friend_view(request, user_id):
 
 
 def logout_view(request, user_id):
-    User.objects.filter(username=user_id).delete()
+    logout(request)
     return redirect('login')
 
 
